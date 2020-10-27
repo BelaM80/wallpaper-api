@@ -2,11 +2,10 @@
   margin: 20px;
   display: grid;
   place-items: center;
-  width: 1200px;
 }
 
 .imageThumb {
-  width: 200px;
+  width: 40%;
   margin: 0;
 }
 
