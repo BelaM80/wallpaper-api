@@ -1,4 +1,4 @@
-import "./global.css";
+import "./App.css";
 import ImagePreview from "./components/ImagePreview";
 
 function App() {
