@@ -12,7 +12,17 @@ function App() {
   }
 
   function handleClickFavorits() {
-    const oldFavorits = JSON.parse(localStorage.getItem("favorites")) || [];
+    const imgId = randomImage.id;
+    let favorites = null;
+    try {
+      favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    } catch (error) {
+      console.log(error);
+      favorites = [];
+    }
+    if (favorites.includes(imgId)) {
+      return;
+    }
 
     //sconst isFavorite = oldFavorits.incudes(randomImage.id)
 
@@ -22,7 +32,7 @@ function App() {
     //   ))
     // }
 
-    const newFavorits = [...oldFavorits, randomImage.id];
+    const newFavorits = [...favorites, imgId];
     localStorage.setItem("favorites", JSON.stringify(newFavorits));
   }
 
