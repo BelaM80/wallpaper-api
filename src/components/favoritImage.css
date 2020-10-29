@@ -1,5 +1,5 @@
 .favoriteCard {
-  width: 250px;
+  width: auto;
 }
 
 .favoriteCard__img {
@@ -8,4 +8,5 @@
   width: 300px;
   max-height: 400px;
   object-fit: cover;
+  margin: 5px;
 }
