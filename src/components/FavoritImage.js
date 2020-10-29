@@ -1,7 +1,7 @@
 import "./favoritImage.css";
 import React from "react";
 
-export default function favoriteImage({ photoId }) {
+export default function FavoriteImage({ photoId }) {
   return (
     <div className="favoriteCard">
       <img

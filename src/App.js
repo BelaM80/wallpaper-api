@@ -7,7 +7,9 @@ import FavoriteImageList from "./components/FavoriteImageList";
 
 function App() {
   const [randomImage, setRandomImage] = useState(null);
-
+  const [currentFavorites, setCurrentFavorites] = useState(
+    JSON.parse(localStorage.getItem("favorites")) || []
+  );
   async function handleClick() {
     const randomImageResponse = await getRandomImage();
     setRandomImage(randomImageResponse);
@@ -27,10 +29,10 @@ function App() {
     }
 
     const newFavorits = [...favorites, imgId];
+    setCurrentFavorites(newFavorits);
     localStorage.setItem("favorites", JSON.stringify(newFavorits));
   }
 
-  const photoIds = JSON.parse(localStorage.getItem("favorites")) || [];
   return (
     <main>
       <button onClick={() => handleClick()}>Get Random Image</button>
@@ -42,7 +44,7 @@ function App() {
           onClickFavorits={() => handleClickFavorits()}
         />
       )}
-      <FavoriteImageList photoIds={photoIds} />
+      <FavoriteImageList photoIds={currentFavorites} />
     </main>
   );
 }
