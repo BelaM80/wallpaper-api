@@ -1,0 +1,11 @@
+.favoriteCard {
+  width: 250px;
+}
+
+.favoriteCard__img {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  max-height: 400px;
+  object-fit: cover;
+}
