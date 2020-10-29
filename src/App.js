@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import ImagePreview from "./components/ImagePreview";
 import { getRandomImage } from "./api/getRandomImage";
-import FavoriteImage from "./components/FavoritImage";
+import FavoritImage from "./components/FavoritImage";
 
 function App() {
   const [randomImage, setRandomImage] = useState(null);
@@ -41,7 +41,7 @@ function App() {
         />
       )}
       <div>
-        <FavoriteImage />
+        <FavoritImage />
       </div>
     </main>
   );
