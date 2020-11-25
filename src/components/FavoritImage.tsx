@@ -1,12 +1,16 @@
 import "./favoritImage.css";
 import React from "react";
 
-export default function FavoriteImage({ photoId }) {
+type favoritImageProp = {
+  favorites: "string";
+};
+
+export default function FavoriteImage({ favorites }: favoritImageProp) {
   return (
     <div className="favoriteCard">
       <img
         className="favoriteCard__img"
-        src={`https://source.unsplash.com/${photoId}`}
+        src={`https://source.unsplash.com/${favorites}`}
         alt="Something´s happening"
       />
     </div>

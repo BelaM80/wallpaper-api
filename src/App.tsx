@@ -8,7 +8,7 @@ import FavoriteImageList from "./components/FavoriteImageList";
 function App() {
   const [randomImage, setRandomImage] = useState(null);
   const [currentFavorites, setCurrentFavorites] = useState(
-    JSON.parse(localStorage.getItem("favorites")) || []
+    JSON.parse(localStorage.getItem("favorites") || "[]") || []
   );
   async function handleClick() {
     const randomImageResponse = await getRandomImage();
@@ -44,7 +44,7 @@ function App() {
           onClickFavorits={() => handleClickFavorits()}
         />
       )}
-      <FavoriteImageList photoIds={currentFavorites} />
+      <FavoriteImageList favorites={currentFavorites} />
     </main>
   );
 }
